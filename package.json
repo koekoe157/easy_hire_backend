@@ -1,7 +1,6 @@
 {
   "name": "easy_hire_server",
   "version": "1.0.0",
-  "description": "",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
@@ -17,5 +16,6 @@
     "express": "^5.1.0",
     "firebase-admin": "^13.4.0",
     "nodemon": "^3.1.10"
-  }
+  },
+  "description": ""
 }
