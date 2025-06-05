@@ -1,11 +1,22 @@
 import { Router } from "express";
 
-const testRouter = Router();
+const userRouter = Router();
+const userDataStore = {};
 
-testRouter.get('/', async(req, res) => {
-    return res.status(200).json({
-        message: "Welcome to the node server"
-    })
-})
+// ✅ POST /api/v1/users
+userRouter.post("/", (req, res) => {
+  const { id, name, email, photoUrl, aboutMe } = req.body;
 
-export default testRouter;
+  if (!id || !email) {
+    return res.status(400).json({ message: "Missing required fields: id and email" });
+  }
+
+  userDataStore[id] = { name, email, photoUrl, aboutMe };
+
+  res.status(201).json({
+    message: "User created",
+    user: userDataStore[id],
+  });
+});
+
+export default userRouter;
