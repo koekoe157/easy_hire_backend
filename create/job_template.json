@@ -1,0 +1,47 @@
+[
+  {
+    "company": "ShinySpace Cleaning Services",
+    "role": "Residential Cleaner",
+    "salary": "200000 MMK",
+    "location": "Yangon",
+    "tag": "Home Service",
+    "type": "Part-Time",
+    "requirements": "• Able to commute to job sites in Yangon • Must bring own cleaning tools • Basic understanding of hygiene standards",
+    "responsibilities": "• Clean residential units including bathrooms and kitchens • Follow instructions from supervisors • Report any maintenance issues",
+    "jobSummary": {
+      "Education": "High School",
+      "Working Days": "Mon–Sat",
+      "Working Hours": "8am–12pm"
+    }
+  },
+  {
+    "company": "SkyTech Myanmar",
+    "role": "Customer Support Agent",
+    "salary": "350000 MMK",
+    "location": "Naypyitaw",
+    "tag": "Customer Service",
+    "type": "Remote",
+    "requirements": "• Strong communication skills in Burmese and English • Stable internet connection • Experience with support tools (e.g., Zendesk)",
+    "responsibilities": "• Respond to customer inquiries via chat and email • Resolve basic product issues • Escalate complex cases to technical team",
+    "jobSummary": {
+      "Education": "Bachelor’s",
+      "Working Days": "Tue–Sat",
+      "Working Hours": "10am–6pm"
+    }
+  },
+  {
+    "company": "Golden Spoon Restaurant",
+    "role": "Waiter/Waitress",
+    "salary": "180000 MMK",
+    "location": "Yangon",
+    "tag": "Food Service",
+    "type": "Full-Time",
+    "requirements": "• Good communication and customer service skills • Must be punctual and reliable • Previous experience preferred but not required",
+    "responsibilities": "• Take orders and serve food and beverages • Maintain cleanliness of tables and dining area • Provide excellent customer service",
+    "jobSummary": {
+      "Education": "High School or equivalent",
+      "Working Days": "Mon–Sun",
+      "Working Hours": "10am–8pm"
+    }
+  }
+]
