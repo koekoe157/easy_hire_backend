@@ -3,7 +3,6 @@ import { db } from "../firebase.js";
 
 const userRouter = Router();
 
-// ✅ Create or Update User (Upsert)
 userRouter.post("/", async (req, res) => {
   try {
     const { id, name, email, photoUrl, aboutMe } = req.body;
@@ -30,7 +29,6 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
-// ✅ Get User by ID
 userRouter.get("/:id", async (req, res) => {
   try {
     const userId = req.params.id;
@@ -48,7 +46,6 @@ userRouter.get("/:id", async (req, res) => {
   }
 });
 
-// ✅ Update User by ID
 userRouter.put("/:id", async (req, res) => {
   try {
     const userId = req.params.id;

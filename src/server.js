@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(cookieParser());
-app.use(express.json()); // ✅ enables JSON request body parsing
+app.use(express.json()); 
 app.use("/api/v1", mainRouter);
 
 app.listen(PORT, () => {
