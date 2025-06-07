@@ -22,7 +22,10 @@ jobRouter.get("/", async (req, res) => {
     res.status(200).json(jobs);
   } catch (error) {
     console.error("GET /jobs error:", error);
-    res.status(500).json({ message: "Failed to fetch jobs", error: error.message });
+    res.status(500).json({
+      message: "Failed to fetch jobs",
+      error: error.message,
+    });
   }
 });
 
@@ -39,7 +42,10 @@ jobRouter.get("/:id", async (req, res) => {
     res.status(200).json({ id: doc.id, ...doc.data() });
   } catch (error) {
     console.error("GET /jobs/:id error:", error);
-    res.status(500).json({ message: "Failed to fetch job", error: error.message });
+    res.status(500).json({
+      message: "Failed to fetch job",
+      error: error.message,
+    });
   }
 });
 
@@ -60,8 +66,11 @@ jobRouter.post("/", async (req, res) => {
       requirements,
       responsibilities,
       jobSummary,
-      tags,
       createdBy,
+      createdByName,
+      createdByPhotoUrl,
+      tag,
+      imageUrl,
     } = req.body;
 
     if (!role || !company || !salary || !location || !createdBy) {
@@ -82,8 +91,11 @@ jobRouter.post("/", async (req, res) => {
       requirements: requirements || '',
       responsibilities: responsibilities || '',
       jobSummary: jobSummary || '',
-      tags: tags || [],
       createdBy,
+      createdByName: createdByName || '',
+      createdByPhotoUrl: createdByPhotoUrl || '',
+      tag: tag || '',
+      imageUrl: imageUrl || '',
       createdAt: new Date().toISOString(),
     };
 
@@ -93,7 +105,10 @@ jobRouter.post("/", async (req, res) => {
     res.status(201).json({ message: "Job created", id: newDocRef.id });
   } catch (error) {
     console.error("POST /jobs error:", error);
-    res.status(500).json({ message: "Failed to save job", error: error.message });
+    res.status(500).json({
+      message: "Failed to save job",
+      error: error.message,
+    });
   }
 });
 
@@ -113,7 +128,10 @@ jobRouter.get("/by-user/:userId", async (req, res) => {
     res.status(200).json(jobs);
   } catch (error) {
     console.error("GET /jobs/by-user/:userId error:", error);
-    res.status(500).json({ message: "Failed to fetch user's jobs", error: error.message });
+    res.status(500).json({
+      message: "Failed to fetch user's jobs",
+      error: error.message,
+    });
   }
 });
 
