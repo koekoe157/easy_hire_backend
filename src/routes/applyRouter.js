@@ -149,4 +149,32 @@ applyRouter.patch("/:applicationId/status", async (req, res) => {
   }
 });
 
+// ✅ Delete a job application
+applyRouter.delete("/:applicationId", async (req, res) => {
+  try {
+    const { applicationId } = req.params;
+
+    // Check if application exists
+    const applicationDoc = await db
+      .collection("applications")
+      .doc(applicationId)
+      .get();
+
+    if (!applicationDoc.exists) {
+      return res.status(404).json({ message: "Application not found" });
+    }
+
+    // Delete the application
+    await db.collection("applications").doc(applicationId).delete();
+
+    res.status(200).json({ message: "Application deleted successfully" });
+  } catch (error) {
+    console.error("DELETE /apply/:applicationId error:", error);
+    res.status(500).json({
+      message: "Failed to delete application",
+      error: error.message,
+    });
+  }
+});
+
 export default applyRouter;
